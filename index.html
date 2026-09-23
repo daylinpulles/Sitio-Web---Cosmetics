@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumière | Serums Antiedad en Tulcán</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pastel: {
+                            blue: '#e1e8ed',
+                            pink: '#f5ebeb',
+                            nude: '#f4ede6',
+                            green: '#e6ede6',
+                            dark: '#6d767d'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-pastel-nude">
+
+    <!-- Hero Section -->
+    <div id="inicio" class="split-screen relative">
+        <!-- Logo -->
+        <div class="absolute top-8 left-1/2 transform -translate-x-1/2 z-20 text-center text-white pointer-events-none">
+            <h1 class="text-4xl font-semibold tracking-[0.15em] mb-1 drop-shadow-md">LUMIÈRE</h1>
+            <p class="text-[0.65rem] tracking-[0.4em] uppercase opacity-90 drop-shadow-md">Cosmetics</p>
+        </div>
+
+        <!-- Navigation -->
+        <a href="#inicio" class="nav-link top-10 left-10">INICIO</a>
+        <a href="#productos" class="nav-link top-10 right-10">PRODUCTOS</a>
+        <a href="#marca" class="nav-link bottom-10 left-10">MARCA</a>
+        <div class="nav-link bottom-10 right-10 flex gap-2">
+            <span>CARRO</span>
+            <span class="opacity-50">|</span>
+            <a href="#" class="hover:opacity-70 transition">ES</a>
+            <a href="#" class="opacity-50 hover:opacity-100 transition">EN</a>
+        </div>
+
+        <!-- Left Side -->
+        <div class="left-half">
+            <div class="overlay"></div>
+            <h2 class="large-text top-[20%] left-1/2 transform -translate-x-1/2 w-full text-center">Suero Facial</h2>
+        </div>
+
+        <!-- Right Side -->
+        <div class="right-half">
+            <div class="overlay"></div>
+            <h2 class="large-text bottom-[20%] left-1/2 transform -translate-x-1/2 w-full text-center">Antiedad</h2>
+        </div>
+
+        <!-- Center Element -->
+        <a href="#productos" class="center-button">
+            <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Model" class="center-image">
+            <span class="tracking-[0.2em] uppercase text-xs mt-3 font-medium drop-shadow-md text-white">Explorar ↗</span>
+        </a>
+    </div>
+
+    <!-- Products Section -->
+    <section id="productos" class="py-24 bg-white px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl brand-font mb-4 text-pastel-dark">Nuestros Serums Especializados</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed">Formulaciones modernas y de alta eficacia, adaptadas a las necesidades de cada tipo de piel. Descubre el poder transformador de nuestros ingredientes activos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Product 1 -->
+                <div class="bg-pastel-blue/30 p-8 rounded-[2rem] text-center hover:shadow-lg transition-all duration-300 group">
+                    <div class="overflow-hidden rounded-2xl mb-6">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Serum Piel Seca" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-2xl brand-font font-bold mb-2 text-pastel-dark">Hydra-Glow</h3>
+                    <p class="text-xs font-bold text-gray-500 mb-5 uppercase tracking-widest border-b border-gray-300 pb-4 inline-block">Para Piel Seca</p>
+                    <p class="text-gray-500 mb-6 text-sm leading-relaxed">Enriquecido con <strong>Ácido Hialurónico</strong>. Proporciona hidratación profunda, rellena líneas de expresión y devuelve la elasticidad.</p>
+                    <button class="bg-pastel-dark text-white px-6 py-2 rounded-full text-xs tracking-widest uppercase hover:opacity-80 transition">Comprar</button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-pastel-pink/40 p-8 rounded-[2rem] text-center hover:shadow-lg transition-all duration-300 transform md:-translate-y-6 group">
+                    <div class="overflow-hidden rounded-2xl mb-6">
+                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Serum Piel Mixta" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-2xl brand-font font-bold mb-2 text-pastel-dark">Vita-Radiance</h3>
+                    <p class="text-xs font-bold text-gray-500 mb-5 uppercase tracking-widest border-b border-gray-300 pb-4 inline-block">Para Piel Mixta</p>
+                    <p class="text-gray-500 mb-6 text-sm leading-relaxed">Con un potente shot de <strong>Vitamina C</strong> pura. Unifica el tono de la piel, aporta antioxidantes y combate signos del envejecimiento.</p>
+                    <button class="bg-pastel-dark text-white px-6 py-2 rounded-full text-xs tracking-widest uppercase hover:opacity-80 transition">Comprar</button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-pastel-green/40 p-8 rounded-[2rem] text-center hover:shadow-lg transition-all duration-300 group">
+                    <div class="overflow-hidden rounded-2xl mb-6">
+                        <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Serum Piel Grasa" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-2xl brand-font font-bold mb-2 text-pastel-dark">Clear-Renew</h3>
+                    <p class="text-xs font-bold text-gray-500 mb-5 uppercase tracking-widest border-b border-gray-300 pb-4 inline-block">Para Piel Grasa</p>
+                    <p class="text-gray-500 mb-6 text-sm leading-relaxed">Formulado con <strong>Ácido Salicílico</strong> (BHA). Renueva la textura, controla el sebo y minimiza el aspecto de los poros sin resecar.</p>
+                    <button class="bg-pastel-dark text-white px-6 py-2 rounded-full text-xs tracking-widest uppercase hover:opacity-80 transition">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="marca" class="py-24 bg-pastel-pink text-pastel-dark px-8 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto relative z-10 text-center">
+            <h2 class="text-4xl brand-font mb-6 tracking-wide">Visítanos en Tulcán</h2>
+            <p class="text-lg mb-12 font-light max-w-2xl mx-auto opacity-80">Descubre tu rutina antiedad perfecta. Te esperamos en nuestro local físico para brindarte asesoría personalizada según tu tipo de piel.</p>
+            
+            <div class="inline-block bg-white/60 backdrop-blur-md border border-white p-10 rounded-[2rem] shadow-xl hover:bg-white/80 transition-colors">
+                <div class="flex items-center justify-center space-x-3 mb-6 text-pastel-dark">
+                    <i class="fas fa-map-marker-alt text-3xl"></i>
+                </div>
+                <h3 class="text-2xl brand-font mb-2">Nuestro Local</h3>
+                <p class="text-xl font-light mb-1">Calles Sumaco y Cayambe</p>
+                <p class="text-pastel-dark/70 font-medium tracking-wider uppercase text-sm">Tulcán, Ecuador</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white text-gray-400 py-10 text-center text-xs tracking-widest uppercase border-t border-gray-100">
+        <p>&copy; 2026 Lumière Cosmetics. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/593982945812" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
