@@ -1,146 +1,617 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumière | Serums Antiedad en Tulcán</title>
+    <title>Montero's Tienda de Maquillaje | Pimampiro</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        pastel: {
-                            blue: '#e1e8ed',
-                            pink: '#f5ebeb',
-                            nude: '#f4ede6',
-                            green: '#e6ede6',
-                            dark: '#6d767d'
+                        brand: {
+                            pink: '#f472b6',
+                            light: '#fdf2f8',
+                            dark: '#be185d',
+                            gold: '#d97706',
+                            neutral: '#f3f4f6'
                         }
+                    },
+                    fontFamily: {
+                        sans: ['Archivo', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
                     }
                 }
             }
         }
     </script>
-    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-pastel-nude">
+<body class="font-sans text-gray-900 bg-white antialiased">
 
-    <!-- Hero Section -->
-    <div id="inicio" class="split-screen relative">
-        <!-- Logo -->
-        <div class="absolute top-8 left-1/2 transform -translate-x-1/2 z-20 text-center text-white pointer-events-none">
-            <h1 class="text-4xl font-semibold tracking-[0.15em] mb-1 drop-shadow-md">LUMIÈRE</h1>
-            <p class="text-[0.65rem] tracking-[0.4em] uppercase opacity-90 drop-shadow-md">Cosmetics</p>
-        </div>
-
-        <!-- Navigation -->
-        <a href="#inicio" class="nav-link top-10 left-10">INICIO</a>
-        <a href="#productos" class="nav-link top-10 right-10">PRODUCTOS</a>
-        <a href="#marca" class="nav-link bottom-10 left-10">MARCA</a>
-        <div class="nav-link bottom-10 right-10 flex gap-2">
-            <span>CARRO</span>
-            <span class="opacity-50">|</span>
-            <a href="#" class="hover:opacity-70 transition">ES</a>
-            <a href="#" class="opacity-50 hover:opacity-100 transition">EN</a>
-        </div>
-
-        <!-- Left Side -->
-        <div class="left-half">
-            <div class="overlay"></div>
-            <h2 class="large-text top-[20%] left-1/2 transform -translate-x-1/2 w-full text-center">Suero Facial</h2>
-        </div>
-
-        <!-- Right Side -->
-        <div class="right-half">
-            <div class="overlay"></div>
-            <h2 class="large-text bottom-[20%] left-1/2 transform -translate-x-1/2 w-full text-center">Antiedad</h2>
-        </div>
-
-        <!-- Center Element -->
-        <a href="#productos" class="center-button">
-            <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Model" class="center-image">
-            <span class="tracking-[0.2em] uppercase text-xs mt-3 font-medium drop-shadow-md text-white">Explorar ↗</span>
-        </a>
+    <!-- Barra superior estilo Morphe -->
+    <div class="bg-black text-white text-center text-xs md:text-sm font-bold tracking-widest uppercase py-2">
+        🚛 Envíos a domicilio en Pimampiro y envíos nacionales por Servientrega 🚛
     </div>
 
-    <!-- Products Section -->
-    <section id="productos" class="py-24 bg-white px-8">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl brand-font mb-4 text-pastel-dark">Nuestros Serums Especializados</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed">Formulaciones modernas y de alta eficacia, adaptadas a las necesidades de cada tipo de piel. Descubre el poder transformador de nuestros ingredientes activos.</p>
+    <!-- Navbar -->
+    <nav class="bg-white/90 backdrop-blur-md fixed w-full z-50 top-8 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-28">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="assets/img/logo-limpio.png" alt="Montero's Logo" class="h-24 w-auto object-contain" onerror="this.src='https://via.placeholder.com/150x50/fdf2f8/be185d?text=Montero%27s'">
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center uppercase text-xs font-bold tracking-widest">
+                    <a href="#beneficios" class="text-gray-600 hover:text-brand-pink transition-colors">¿Qué ofrecemos?</a>
+                    <a href="#catalogo" class="text-gray-600 hover:text-brand-pink transition-colors">Catálogo</a>
+                    <a href="#combos" class="text-gray-600 hover:text-brand-pink transition-colors">Combos</a>
+                    <a href="#historia" class="text-gray-600 hover:text-brand-pink transition-colors">Nosotros</a>
+                    <a href="#metodos-pago" class="text-gray-600 hover:text-brand-pink transition-colors">Métodos de Pago</a>
+                    <button id="cart-open" class="relative text-gray-800 hover:text-brand-pink text-2xl mx-4" aria-label="Carrito">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-3 bg-brand-pink text-white text-xs font-black rounded-full px-1.5">0</span>
+                    </button>
+                    <a href="https://wa.me/593981540453?text=Hola%20Montero's,%20quiero%20realizar%20un%20pedido.%20Hacen%20envios%20a%20domicilio%20en%20Pimampiro%20o%20por%20Servientrega" target="_blank" class="bg-gray-900 text-white px-5 py-2.5 rounded-none font-bold hover:bg-brand-pink transition-all">
+                        PEDIR AHORA
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <button id="cart-open-m" class="relative text-gray-800 text-2xl" aria-label="Carrito">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="absolute -top-2 -right-3 bg-brand-pink text-white text-xs font-black rounded-full px-1.5 cart-count-m">0</span>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-pink focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-brand-light">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#beneficios" class="block px-3 py-2 text-gray-600 hover:bg-brand-light hover:text-brand-pink rounded-md">¿Qué ofrecemos?</a>
+                <a href="#catalogo" class="block px-3 py-2 text-gray-600 hover:bg-brand-light hover:text-brand-pink rounded-md">Catálogo</a>
+                <a href="#combos" class="block px-3 py-2 text-gray-600 hover:bg-brand-light hover:text-brand-pink rounded-md">Combos</a>
+                <a href="#historia" class="block px-3 py-2 text-gray-600 hover:bg-brand-light hover:text-brand-pink rounded-md">Nosotros</a>
+                <a href="#metodos-pago" class="block px-3 py-2 text-gray-600 hover:bg-brand-light hover:text-brand-pink rounded-md">Métodos de Pago</a>
+            </div>
+        </div>
+    </nav>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- Product 1 -->
-                <div class="bg-pastel-blue/30 p-8 rounded-[2rem] text-center hover:shadow-lg transition-all duration-300 group">
-                    <div class="overflow-hidden rounded-2xl mb-6">
-                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Serum Piel Seca" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <h3 class="text-2xl brand-font font-bold mb-2 text-pastel-dark">Hydra-Glow</h3>
-                    <p class="text-xs font-bold text-gray-500 mb-5 uppercase tracking-widest border-b border-gray-300 pb-4 inline-block">Para Piel Seca</p>
-                    <p class="text-gray-500 mb-6 text-sm leading-relaxed">Enriquecido con <strong>Ácido Hialurónico</strong>. Proporciona hidratación profunda, rellena líneas de expresión y devuelve la elasticidad.</p>
-                    <button class="bg-pastel-dark text-white px-6 py-2 rounded-full text-xs tracking-widest uppercase hover:opacity-80 transition">Comprar</button>
+    <!-- 1. INICIO / HERO -->
+    <header class="relative pt-28 pb-0 md:pt-32 overflow-hidden">
+        <div id="hero-banner" class="relative w-full h-[70vh] md:h-[85vh] flex items-center justify-center cursor-pointer overflow-hidden">
+            <img src="assets/img/modelo.jpg" alt="Modelo con maquillaje - Montero's" class="absolute inset-0 w-full h-full object-cover object-[center_35%] animate-kenburns">
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="relative z-10 text-center px-4 max-w-4xl">
+                <img src="assets/img/logo-limpio.png" alt="Montero's Tienda de Maquillaje" class="h-40 md:h-56 w-auto mx-auto mb-6 drop-shadow-2xl">
+                <h1 class="text-4xl md:text-7xl font-black uppercase text-white leading-tight tracking-tight">
+                    Resalta tu belleza con los mejores productos
+                </h1>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                    <a href="#catalogo" class="bg-white text-gray-900 px-10 py-4 font-black uppercase tracking-widest hover:bg-brand-pink hover:text-white transition-colors">Ver Catálogo</a>
+                    <a href="https://wa.me/593981540453?text=Hola%20Montero's,%20quiero%20realizar%20un%20pedido.%20Hacen%20envios%20a%20domicilio%20en%20Pimampiro%20o%20por%20Servientrega" target="_blank" class="bg-brand-pink text-white px-10 py-4 font-black uppercase tracking-widest hover:bg-white hover:text-gray-900 transition-colors">Pedir por WhatsApp</a>
                 </div>
+            </div>
+        </div>
+    </header>
 
-                <!-- Product 2 -->
-                <div class="bg-pastel-pink/40 p-8 rounded-[2rem] text-center hover:shadow-lg transition-all duration-300 transform md:-translate-y-6 group">
-                    <div class="overflow-hidden rounded-2xl mb-6">
-                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Serum Piel Mixta" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500">
+    <!-- TIRA MORPHE ESTILO MARCA -->
+    <div class="bg-black text-white text-center py-5 px-4">
+        <p class="font-black uppercase tracking-[0.3em] text-sm md:text-base">Maquillaje · Skincare · Capilar · Perfumería · Accesorios</p>
+    </div>
+
+    <!-- 2. ¿QUÉ OFRECEMOS? -->
+    <section id="beneficios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-wide font-bold text-gray-900 mb-4">¿Por qué elegirnos?</h2>
+                <div class="w-24 h-1 bg-brand-pink mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-brand-light p-8 rounded-3xl text-center transform hover:-translate-y-2 transition-transform duration-300 border border-pink-100 shadow-sm hover:shadow-lg">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md text-brand-pink text-2xl">
+                        <i class="fas fa-spa"></i>
                     </div>
-                    <h3 class="text-2xl brand-font font-bold mb-2 text-pastel-dark">Vita-Radiance</h3>
-                    <p class="text-xs font-bold text-gray-500 mb-5 uppercase tracking-widest border-b border-gray-300 pb-4 inline-block">Para Piel Mixta</p>
-                    <p class="text-gray-500 mb-6 text-sm leading-relaxed">Con un potente shot de <strong>Vitamina C</strong> pura. Unifica el tono de la piel, aporta antioxidantes y combate signos del envejecimiento.</p>
-                    <button class="bg-pastel-dark text-white px-6 py-2 rounded-full text-xs tracking-widest uppercase hover:opacity-80 transition">Comprar</button>
+                    <h3 class="text-xl font-bold mb-3">Asesoría Personalizada</h3>
+                    <p class="text-gray-600 text-sm">Te ayudamos a elegir los productos ideales según tu tipo de piel y necesidades.</p>
                 </div>
-
-                <!-- Product 3 -->
-                <div class="bg-pastel-green/40 p-8 rounded-[2rem] text-center hover:shadow-lg transition-all duration-300 group">
-                    <div class="overflow-hidden rounded-2xl mb-6">
-                        <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Serum Piel Grasa" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                <div class="bg-brand-light p-8 rounded-3xl text-center transform hover:-translate-y-2 transition-transform duration-300 border border-pink-100 shadow-sm hover:shadow-lg">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md text-brand-pink text-2xl">
+                        <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3 class="text-2xl brand-font font-bold mb-2 text-pastel-dark">Clear-Renew</h3>
-                    <p class="text-xs font-bold text-gray-500 mb-5 uppercase tracking-widest border-b border-gray-300 pb-4 inline-block">Para Piel Grasa</p>
-                    <p class="text-gray-500 mb-6 text-sm leading-relaxed">Formulado con <strong>Ácido Salicílico</strong> (BHA). Renueva la textura, controla el sebo y minimiza el aspecto de los poros sin resecar.</p>
-                    <button class="bg-pastel-dark text-white px-6 py-2 rounded-full text-xs tracking-widest uppercase hover:opacity-80 transition">Comprar</button>
+                    <h3 class="text-xl font-bold mb-3">100% Originales</h3>
+                    <p class="text-gray-600 text-sm">Garantía de calidad. Todos nuestros productos cuentan con Registro Sanitario.</p>
+                </div>
+                <div class="bg-brand-light p-8 rounded-3xl text-center transform hover:-translate-y-2 transition-transform duration-300 border border-pink-100 shadow-sm hover:shadow-lg">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md text-brand-pink text-2xl">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tendencias Virales</h3>
+                    <p class="text-gray-600 text-sm">Encuentra los cosméticos más buscados en TikTok e Instagram en un solo lugar.</p>
+                </div>
+                <div class="bg-brand-light p-8 rounded-3xl text-center transform hover:-translate-y-2 transition-transform duration-300 border border-pink-100 shadow-sm hover:shadow-lg">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md text-brand-pink text-2xl">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Envíos Seguros</h3>
+                    <p class="text-gray-600 text-sm">Entregas a domicilio en Pimampiro y envíos nacionales por medio de Servientrega 🚛💖.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Location & Contact Section -->
-    <section id="marca" class="py-24 bg-pastel-pink text-pastel-dark px-8 relative overflow-hidden">
-        <div class="max-w-4xl mx-auto relative z-10 text-center">
-            <h2 class="text-4xl brand-font mb-6 tracking-wide">Visítanos en Tulcán</h2>
-            <p class="text-lg mb-12 font-light max-w-2xl mx-auto opacity-80">Descubre tu rutina antiedad perfecta. Te esperamos en nuestro local físico para brindarte asesoría personalizada según tu tipo de piel.</p>
-            
-            <div class="inline-block bg-white/60 backdrop-blur-md border border-white p-10 rounded-[2rem] shadow-xl hover:bg-white/80 transition-colors">
-                <div class="flex items-center justify-center space-x-3 mb-6 text-pastel-dark">
-                    <i class="fas fa-map-marker-alt text-3xl"></i>
+    <!-- 3. CATÁLOGO INTERACTIVO -->
+    <section id="catalogo" class="py-20 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-wide font-bold text-gray-900 mb-4">Descubre Nuestro Catálogo</h2>
+                <div class="w-24 h-1 bg-brand-pink mx-auto rounded-full mb-8"></div>
+
+                <!-- Filtros -->
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button class="filter-btn bg-brand-pink text-white px-6 py-2 rounded-full font-medium shadow-sm transition-colors" data-filter="all">Todos</button>
+                    <button class="filter-btn bg-white text-gray-700 hover:bg-pink-50 px-6 py-2 rounded-full font-medium shadow-sm transition-colors border border-gray-100" data-filter="maquillaje">Maquillaje</button>
+                    <button class="filter-btn bg-white text-gray-700 hover:bg-pink-50 px-6 py-2 rounded-full font-medium shadow-sm transition-colors border border-gray-100" data-filter="skincare">Skincare</button>
+                    <button class="filter-btn bg-white text-gray-700 hover:bg-pink-50 px-6 py-2 rounded-full font-medium shadow-sm transition-colors border border-gray-100" data-filter="capilar">Capilar y Perfumería</button>
+                    <button class="filter-btn bg-white text-gray-700 hover:bg-pink-50 px-6 py-2 rounded-full font-medium shadow-sm transition-colors border border-gray-100" data-filter="accesorios">Accesorios</button>
                 </div>
-                <h3 class="text-2xl brand-font mb-2">Nuestro Local</h3>
-                <p class="text-xl font-light mb-1">Calles Sumaco y Cayambe</p>
-                <p class="text-pastel-dark/70 font-medium tracking-wider uppercase text-sm">Tulcán, Ecuador</p>
+            </div>
+
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Se llenará mediante JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-white text-gray-400 py-10 text-center text-xs tracking-widest uppercase border-t border-gray-100">
-        <p>&copy; 2026 Lumière Cosmetics. Todos los derechos reservados.</p>
+    <!-- 4. COMBOS Y CAJITAS DE REGALO -->
+    <section id="combos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-wide font-bold text-gray-900 mb-4">Combos y Cajitas de Regalo 🎁</h2>
+                <p class="text-gray-600">Sorprende a esa persona especial o consiéntete con nuestros kits temáticos.</p>
+                <div class="w-24 h-1 bg-brand-pink mx-auto rounded-full mt-6"></div>
+            </div>
+            <div id="combos-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Se llenará mediante JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ASESORÍA Y TIPS DE BELLEZA -->
+    <section id="tips" class="py-20 bg-pink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-full max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-black uppercase tracking-wide font-bold text-gray-900 mb-6">Tips para tu tipo de piel ✨</h2>
+                    <p class="text-gray-600 mb-8">Conocer tu piel es el primer paso para lucir radiante. Aquí te dejamos recomendaciones rápidas.</p>
+
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-2xl shadow-sm border border-pink-100 overflow-hidden">
+                            <button onclick="toggleAccordion('tip-grasa')" class="w-full px-6 py-4 flex justify-between items-center bg-white hover:bg-gray-50 focus:outline-none">
+                                <span class="font-bold text-lg text-gray-800">Piel Grasa o Mixta</span>
+                                <i id="icon-tip-grasa" class="fas fa-chevron-down text-brand-pink transition-transform"></i>
+                            </button>
+                            <div id="tip-grasa" class="hidden px-6 pb-4 text-gray-600 text-sm">
+                                Opta por limpiadores en gel, tónicos seborreguladores y polvos sueltos translúcidos para controlar el brillo. No olvides hidratar con texturas ligeras como geles o sueros.
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-sm border border-pink-100 overflow-hidden">
+                            <button onclick="toggleAccordion('tip-seca')" class="w-full px-6 py-4 flex justify-between items-center bg-white hover:bg-gray-50 focus:outline-none">
+                                <span class="font-bold text-lg text-gray-800">Piel Seca</span>
+                                <i id="icon-tip-seca" class="fas fa-chevron-down text-brand-pink transition-transform"></i>
+                            </button>
+                            <div id="tip-seca" class="hidden px-6 pb-4 text-gray-600 text-sm">
+                                Tu mejor aliado es la hidratación profunda. Usa leches limpiadoras, sérums con ácido hialurónico y bases luminosas o hidratantes para evitar que el maquillaje se cuartee.
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-sm border border-pink-100 overflow-hidden">
+                            <button onclick="toggleAccordion('tip-preparacion')" class="w-full px-6 py-4 flex justify-between items-center bg-white hover:bg-gray-50 focus:outline-none">
+                                <span class="font-bold text-lg text-gray-800">Preparación del Maquillaje</span>
+                                <i id="icon-tip-preparacion" class="fas fa-chevron-down text-brand-pink transition-transform"></i>
+                            </button>
+                            <div id="tip-preparacion" class="hidden px-6 pb-4 text-gray-600 text-sm">
+                                Nunca apliques base sin preparar tu rostro. Limpieza, tónico, hidratación y protector solar son pasos indispensables para un acabado impecable y duradero.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. NUESTRA HISTORIA -->
+    <section id="historia" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-pink rounded-3xl p-1 md:p-2 shadow-2xl relative">
+                <div class="absolute -top-6 -left-6 text-6xl text-brand-gold opacity-50"><i class="fas fa-quote-left"></i></div>
+                <div class="bg-white rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 relative overflow-hidden">
+                    <div class="absolute -bottom-10 -right-10 opacity-10">
+                        <i class="fas fa-leaf text-9xl"></i>
+                    </div>
+                    <div class="md:w-1/3 flex justify-center">
+                        <img src="assets/img/logo-limpio.png" alt="Pauleth Montero" class="w-48 h-48 md:w-full md:h-auto object-contain rounded-full md:rounded-2xl shadow-lg border-4 border-white bg-brand-light p-4">
+                    </div>
+                    <div class="md:w-2/3 relative z-10">
+                        <h2 class="text-3xl font-black uppercase tracking-wide font-bold text-gray-900 mb-4">Nuestra Historia</h2>
+                        <div class="w-16 h-1 bg-brand-pink mb-6"></div>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-4">
+                            Montero's nació de la pasión por el maquillaje y el cuidado personal de su fundadora, <strong>Pauleth Montero</strong>.
+                        </p>
+                        <p class="text-gray-600 text-lg leading-relaxed">
+                            Hoy es un espacio pensado para ofrecerte productos de calidad con registro sanitario, tendencias del momento y una atención personalizada en el cantón Pimampiro. Queremos que cada producto que lleves resalte tu belleza única.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. ¿CÓMO REALIZAR TU PEDIDO? -->
+    <section class="py-20 bg-brand-light border-t border-b border-pink-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-wide font-bold text-gray-900 mb-4">¿Cómo realizar tu pedido?</h2>
+                <div class="w-24 h-1 bg-brand-pink mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center relative">
+                <div class="relative group">
+                    <div class="w-20 h-20 mx-auto bg-brand-pink text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mb-6 z-10 relative group-hover:scale-110 transition-transform">1</div>
+                    <h4 class="text-lg font-bold mb-2">Explora</h4>
+                    <p class="text-sm text-gray-600">Navega por nuestro catálogo y descubre los productos ideales para ti.</p>
+                    <div class="hidden md:block absolute top-10 left-1/2 w-full h-0.5 bg-pink-200 -z-0"></div>
+                </div>
+
+                <div class="relative group">
+                    <div class="w-20 h-20 mx-auto bg-brand-pink text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mb-6 z-10 relative group-hover:scale-110 transition-transform">2</div>
+                    <h4 class="text-lg font-bold mb-2">Elige</h4>
+                    <p class="text-sm text-gray-600">Selecciona los productos, tonos o combos temáticos que desees.</p>
+                    <div class="hidden md:block absolute top-10 left-1/2 w-full h-0.5 bg-pink-200 -z-0"></div>
+                </div>
+
+                <div class="relative group">
+                    <div class="w-20 h-20 mx-auto bg-brand-pink text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mb-6 z-10 relative group-hover:scale-110 transition-transform">3</div>
+                    <h4 class="text-lg font-bold mb-2">Contacta</h4>
+                    <p class="text-sm text-gray-600">Haz clic en el botón de WhatsApp y envíanos tu lista de productos.</p>
+                    <div class="hidden md:block absolute top-10 left-1/2 w-full h-0.5 bg-pink-200 -z-0"></div>
+                </div>
+
+                <div class="relative group">
+                    <div class="w-20 h-20 mx-auto bg-brand-pink text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mb-6 z-10 relative group-hover:scale-110 transition-transform"><i class="fas fa-box-open"></i></div>
+                    <h4 class="text-lg font-bold mb-2">Recibe</h4>
+                    <p class="text-sm text-gray-600">Disfruta tu pedido. Entregas en Pimampiro o envíos vía Servientrega 🚛💖.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. MÉTODOS DE PAGO -->
+    <section id="metodos-pago" class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-pink font-black text-xs uppercase tracking-[0.3em] block mb-2">Formas de pago seguras y rápidas</span>
+                <h2 class="text-3xl md:text-5xl font-black uppercase tracking-wide text-gray-900 mb-4">Métodos de Pago</h2>
+                <div class="w-24 h-1 bg-brand-pink mx-auto rounded-full mb-4"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
+                    Paga fácil y rápido desde tu celular con la app <strong>DeUna (Banco Pichincha)</strong>, transferencias bancarias o en efectivo contraentrega en Pimampiro.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <!-- Tarjeta Principal: DeUna con Código QR -->
+                <div class="lg:col-span-2 bg-gradient-to-br from-emerald-50/70 via-white to-pink-50/30 border-2 border-emerald-400/80 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-4 right-4 bg-[#00D287] text-white font-black text-[11px] uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
+                        ⭐ Más rápido y sin comisiones
+                    </div>
+
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-12 h-12 rounded-2xl bg-white shadow-md border border-gray-100 flex items-center justify-center p-2">
+                                <span class="font-black text-xl text-[#552782] italic">d!</span>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-black uppercase tracking-wide text-gray-900 flex items-center gap-2">
+                                    Paga con DeUna!
+                                    <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full">Banco Pichincha</span>
+                                </h3>
+                                <p class="text-xs text-gray-500 font-semibold">Billetera móvil oficial · Pagos al instante con QR o número</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center mb-6">
+                            <!-- Código QR -->
+                            <div class="bg-white p-5 rounded-2xl border border-gray-200 shadow-md flex flex-col items-center text-center">
+                                <a href="assets/img/codigo qr.jpeg" target="_blank" class="block relative group cursor-pointer" title="Clic para ampliar código QR">
+                                    <img src="assets/img/codigo qr.jpeg" alt="Código QR DeUna Banco Pichincha - Montero's" class="w-56 h-auto object-contain rounded-xl shadow-inner transition-transform duration-300 group-hover:scale-105">
+                                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl flex items-center justify-center text-white text-xs font-bold uppercase tracking-wider">
+                                        <i class="fas fa-search-plus mr-1.5"></i> Ver en grande
+                                    </div>
+                                </a>
+                                <span class="text-[11px] text-gray-500 mt-3 font-semibold flex items-center gap-1">
+                                    <i class="fas fa-camera text-brand-pink"></i> Escanea este código desde tu app DeUna
+                                </span>
+                            </div>
+
+                            <!-- Datos de pago y Botón de Copiar -->
+                            <div class="space-y-4">
+                                <div class="bg-white p-4 rounded-xl border border-emerald-100 shadow-sm">
+                                    <span class="text-xs text-gray-500 font-bold uppercase tracking-wider block mb-1">Número registrado DeUna:</span>
+                                    <div class="flex items-center justify-between gap-2">
+                                        <span id="deuna-phone" class="font-black text-xl text-gray-900 tracking-wider">0981540453</span>
+                                        <button id="copy-deuna-btn" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-3 py-2 rounded-lg transition-all flex items-center gap-1.5 active:scale-95 shadow-sm">
+                                            <i class="fas fa-copy"></i> <span id="copy-text">Copiar</span>
+                                        </button>
+                                    </div>
+                                    <span class="text-[11px] text-gray-500 mt-2 block">
+                                        Titular de la cuenta: <strong class="text-gray-800">Pauleth Montero</strong>
+                                    </span>
+                                </div>
+
+                                <div class="space-y-2 text-xs text-gray-600">
+                                    <div class="flex items-start gap-2.5">
+                                        <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5">1</span>
+                                        <span>Abre tu app <strong>DeUna</strong> o <strong>Banca Móvil Pichincha</strong>.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5">
+                                        <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5">2</span>
+                                        <span>Escanea el código QR o transfiere a <strong>0981540453</strong>.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5">
+                                        <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5">3</span>
+                                        <span>Envíanos la captura de tu comprobante por WhatsApp.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-emerald-200/60 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <p class="text-xs text-gray-500">¿Ya realizaste tu pago o tienes consultas?</p>
+                        <a href="https://wa.me/593981540453?text=Hola%20Montero's,%20acabo%20de%20realizar%20un%20pago%20por%20DeUna.%20Adjunto%20mi%20comprobante." target="_blank" class="w-full sm:w-auto bg-[#25D366] text-white font-black uppercase text-xs tracking-wider px-6 py-3 rounded-xl hover:opacity-90 transition-all text-center flex items-center justify-center gap-2 shadow-md">
+                            <i class="fab fa-whatsapp text-lg"></i> Enviar comprobante por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Otras opciones de pago -->
+                <div class="space-y-6 flex flex-col justify-between">
+                    <!-- Transferencia Bancaria -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-3xl p-6 hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-lg mb-4">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h4 class="font-black uppercase tracking-wide text-gray-900 mb-2">Transferencia Bancaria</h4>
+                        <p class="text-xs text-gray-600 mb-3">Banco Pichincha y transferencias directas o interbancarias desde cualquier entidad del país.</p>
+                        <span class="text-[11px] font-bold text-gray-600 bg-white border border-gray-200 px-3 py-1 rounded-full inline-block">
+                            Solicita el número de cuenta por WhatsApp
+                        </span>
+                    </div>
+
+                    <!-- Pago Contraentrega -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-3xl p-6 hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 rounded-xl bg-pink-100 text-brand-pink flex items-center justify-center text-lg mb-4">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h4 class="font-black uppercase tracking-wide text-gray-900 mb-2">Efectivo Contraentrega</h4>
+                        <p class="text-xs text-gray-600 mb-3">Paga en efectivo al recibir tu pedido en la puerta de tu domicilio o punto de encuentro.</p>
+                        <span class="text-[11px] font-bold text-brand-dark bg-brand-light border border-pink-200 px-3 py-1 rounded-full inline-block">
+                            📍 Válido para Cantón Pimampiro
+                        </span>
+                    </div>
+
+                    <!-- Envíos Nacionales -->
+                    <div class="bg-gray-900 text-white rounded-3xl p-6 shadow-md">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fas fa-truck text-brand-pink text-xl"></i>
+                            <h4 class="font-black uppercase tracking-wide text-sm">Envíos Servientrega</h4>
+                        </div>
+                        <p class="text-xs text-gray-300">Envíos seguros a nivel nacional previo pago por DeUna o transferencia bancaria.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8.5 RESEÑAS / PRUEBA SOCIAL -->
+    <section id="resenas" class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-black uppercase tracking-wide text-gray-900 mb-4">Lo que dicen nuestras clientas</h2>
+                <p class="text-gray-500">★★★★★ 4.9 · Más de 500 pedidos felices en Pimampiro</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="border border-gray-200 p-8">
+                    <div class="text-yellow-500 mb-4">★★★★★</div>
+                    <p class="text-gray-700 mb-6">"Me asesoraron perfecta según mi tipo de piel y los productos llegaron súper rápido a mi casa en Pimampiro. ¡100% recomendadas!"</p>
+                    <p class="font-black uppercase tracking-widest text-sm">— María F.</p>
+                </div>
+                <div class="border border-gray-200 p-8">
+                    <div class="text-yellow-500 mb-4">★★★★★</div>
+                    <p class="text-gray-700 mb-6">"Pedí una cajitita de regalo para mi mamá y quedó hermosa. Los precios son geniales y todo original."</p>
+                    <p class="font-black uppercase tracking-widest text-sm">— Karla P.</p>
+                </div>
+                <div class="border border-gray-200 p-8">
+                    <div class="text-yellow-500 mb-4">★★★★★</div>
+                    <p class="text-gray-700 mb-6">"Siempre tienen los productos virales de TikTok. Me encantó la atención personalizada de Pauleth."</p>
+                    <p class="font-black uppercase tracking-widest text-sm">— Daniela R.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. LLAMADO A LA ACCIÓN -->
+    <section class="py-24 bg-[url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center relative bg-fixed">
+        <div class="absolute inset-0 bg-brand-dark/80 mix-blend-multiply"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center text-white">
+            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-wide font-bold mb-6">¿Lista para renovar tu cosmetiquera o armar el regalo perfecto?</h2>
+            <p class="text-xl mb-10 text-pink-100">Descubre nuestros productos y recibe asesoría directa hoy mismo.</p>
+            <a href="https://wa.me/593981540453?text=Hola%20Montero's,%20quiero%20realizar%20un%20pedido.%20Hacen%20envios%20a%20domicilio%20en%20Pimampiro%20o%20por%20Servientrega" target="_blank" class="inline-block bg-white text-brand-dark px-10 py-4 rounded-full font-bold text-lg hover:bg-brand-light hover:text-brand-pink transition-all transform hover:scale-105 shadow-2xl">
+                <i class="fab fa-whatsapp mr-2 text-2xl align-middle"></i> Pedir por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- 9. CONTACTO Y FOOTER -->
+    <footer class="bg-white pt-16 pb-8 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <img src="assets/img/logo-limpio.png" alt="Montero's Logo" class="h-24 w-auto object-contain mb-6" onerror="this.src='https://via.placeholder.com/150x50/fdf2f8/be185d?text=Montero%27s'">
+                    <p class="text-gray-600 mb-6">Tu tienda de confianza para resaltar tu belleza. Productos originales y asesoría personalizada en el corazón de Pimampiro.</p>
+                    <div class="flex items-center text-gray-500">
+                        <i class="fas fa-map-marker-alt text-brand-pink mr-3"></i>
+                        <span>Cantón Pimampiro</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold font-black uppercase tracking-wide mb-6 text-gray-900">Conéctate con nosotros</h4>
+                    <div class="space-y-4">
+                        <a href="https://www.instagram.com/monteros.ec" target="_blank" class="flex items-center text-gray-600 hover:text-brand-pink transition-colors group">
+                            <div class="w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center mr-4 group-hover:bg-brand-pink group-hover:text-white transition-colors">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </div>
+                            <span>@monteros.ec</span>
+                        </a>
+                        <a href="http://t.me/+%7CgjZ4bwTftdhN2Qx" target="_blank" class="flex items-center text-gray-600 hover:text-blue-500 transition-colors group">
+                            <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mr-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                                <i class="fab fa-telegram-plane text-xl"></i>
+                            </div>
+                            <span>Catálogo Oficial en Telegram</span>
+                        </a>
+                        <a href="mailto:monteropauleth@gmail.com" class="flex items-center text-gray-600 hover:text-brand-pink transition-colors group">
+                            <div class="w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center mr-4 group-hover:bg-brand-pink group-hover:text-white transition-colors">
+                                <i class="far fa-envelope text-xl"></i>
+                            </div>
+                            <span>monteropauleth@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold font-black uppercase tracking-wide mb-6 text-gray-900">Atención al Cliente</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><a href="#beneficios" class="hover:text-brand-pink transition-colors">Propuesta de Valor</a></li>
+                        <li><a href="#catalogo" class="hover:text-brand-pink transition-colors">Catálogo de Productos</a></li>
+                        <li><a href="#historia" class="hover:text-brand-pink transition-colors">Nuestra Historia</a></li>
+                        <li>
+                            <p class="mt-4 text-sm font-semibold flex items-center text-brand-dark">
+                                <i class="fas fa-truck mr-2"></i> Envíos por Servientrega
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm text-center md:text-left mb-4 md:mb-0">
+                    &copy; 2026 Montero's Tienda de Maquillaje. Todos los derechos reservados.<br>
+                    Propietaria: Pauleth Montero
+                </p>
+                <div class="flex space-x-4 text-gray-400 items-center">
+                    <a href="#metodos-pago" class="bg-[#00D287] hover:bg-[#00bd7a] text-white text-[11px] font-black px-2.5 py-1 rounded shadow-sm tracking-wider flex items-center gap-1 transition-colors" title="Pagar con DeUna">
+                        <i class="fas fa-qrcode"></i> DeUna!
+                    </a>
+                    <i class="fab fa-cc-visa text-2xl hover:text-gray-600"></i>
+                    <i class="fab fa-cc-mastercard text-2xl hover:text-gray-600"></i>
+                    <i class="fas fa-money-bill-wave text-2xl hover:text-gray-600"></i>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/593982945812" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+    <!-- PANEL DE CARRITO -->
+    <div id="cart-panel" class="hidden fixed inset-0 bg-black/50 z-[60] flex justify-end">
+        <div class="bg-white w-full max-w-md h-full shadow-2xl p-6 flex flex-col">
+            <div class="flex justify-between items-center border-b pb-4">
+                <h3 class="font-black uppercase tracking-widest text-lg">Tu Carrito</h3>
+                <button id="cart-close" class="text-gray-500 hover:text-black text-xl">&times;</button>
+            </div>
+            <div id="cart-items" class="flex-1 overflow-y-auto py-4"></div>
+            <div class="border-t pt-4">
+                <div class="flex justify-between font-black text-xl mb-3">
+                    <span>Total</span><span id="cart-total">$0.00</span>
+                </div>
+
+                <!-- Aviso DeUna en Carrito -->
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 mb-3 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-[#00D287] text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">DeUna!</span>
+                        <span class="text-xs text-emerald-950 font-semibold">Paga con QR o celular</span>
+                    </div>
+                    <a href="#metodos-pago" onclick="document.getElementById('cart-panel').classList.add('hidden')" class="text-xs font-bold text-emerald-700 underline hover:text-emerald-900">Ver QR</a>
+                </div>
+
+                <button id="cart-checkout" class="w-full bg-[#25D366] text-white font-black uppercase tracking-widest py-3 mb-2 hover:opacity-90">
+                    <i class="fab fa-whatsapp"></i> Finalizar por WhatsApp
+                </button>
+                <button id="cart-clear" class="w-full text-xs uppercase text-gray-400 hover:text-red-500">Vaciar carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Control Flotante de Música Ambiental -->
+    <div id="music-control-container" class="fixed bottom-6 left-6 z-50 flex items-center">
+        <button id="music-toggle-btn"
+                class="group relative flex items-center gap-2.5 bg-black/90 hover:bg-black text-white px-3.5 py-3 md:px-4 md:py-2.5 rounded-full shadow-2xl border border-pink-500/30 backdrop-blur-md transition-all duration-300 hover:scale-105 active:scale-95"
+                title="Música de fondo"
+                aria-label="Controlar música de fondo">
+            <!-- Icono -->
+            <span class="relative flex items-center justify-center w-5 h-5 text-brand-pink">
+                <i id="music-icon" class="fas fa-music text-sm transition-transform duration-300 group-hover:rotate-12"></i>
+            </span>
+
+            <!-- Ecualizador animado -->
+            <div id="music-equalizer" class="music-equalizer paused">
+                <span class="music-bar"></span>
+                <span class="music-bar"></span>
+                <span class="music-bar"></span>
+            </div>
+
+            <!-- Texto de estado -->
+            <span id="music-text" class="hidden sm:inline-block text-xs font-black uppercase tracking-wider text-gray-200">
+                Música
+            </span>
+
+            <!-- Tooltip explicativo -->
+            <span id="music-tooltip" class="absolute -top-9 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-md shadow opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap border border-white/10">
+                Pausar música
+            </span>
+        </button>
+    </div>
+
+    <!-- Audio de fondo -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="Audio/WhatsApp%20Audio%202026-10-12%20at%2020.43.07.mpeg" type="audio/mpeg">
+        <source src="audio/WhatsApp%20Audio%202026-10-12%20at%2020.43.07.mpeg" type="audio/mpeg">
+    </audio>
+
+    <!-- Sonido de Clic de Botón -->
+    <audio id="click-sound" preload="auto">
+        <source src="Audio/click.wav" type="audio/wav">
+        <source src="audio/click.wav" type="audio/wav">
+    </audio>
+
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/593981540453?text=Hola%20Montero's,%20quiero%20realizar%20un%20pedido.%20Hacen%20envios%20a%20domicilio%20en%20Pimampiro%20o%20por%20Servientrega"
+       target="_blank"
+       class="fixed bottom-6 right-6 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-[0_4px_14px_0_rgba(37,211,102,0.5)] hover:scale-110 hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] transition-all z-50 animate-bounce-slow">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Instagram Floating Button -->
-    <a href="https://instagram.com/sarahi._dx" target="_blank" class="instagram-float" aria-label="Síguenos en Instagram">
-        <i class="fab fa-instagram"></i>
-    </a>
-
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
 </body>
 </html>
